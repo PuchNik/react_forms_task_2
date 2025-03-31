@@ -37,9 +37,8 @@ function App() {
   return (
     <div className={styles['registration-form']}>
       <h2>Регистрация</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className={styles['registration-form']} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles['form-group']}>
-          <label htmlFor="email">Email:</label>
           <input
             id="email"
             type="email"
@@ -52,7 +51,6 @@ function App() {
           )}
         </div>
         <div className={styles['form-group']}>
-          <label htmlFor="password">Пароль:</label>
           <input
             id="password"
             type="password"
@@ -65,7 +63,6 @@ function App() {
           )}
         </div>
         <div className={styles['form-group']}>
-          <label htmlFor="confirmPassword">Подтверждение пароля:</label>
           <input
             id="confirmPassword"
             type="password"
