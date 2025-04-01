@@ -34,3 +34,8 @@ button {
     font-weight: 400;
     letter-spacing: 1px;
 }
+
+.error {
+    text-align: center;
+    color: red;
+}
