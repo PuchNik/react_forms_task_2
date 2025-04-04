@@ -1,12 +1,46 @@
-# React + Vite
+# Приложение регистрации пользователя (React Hook Form и Yup)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Это приложение, разработанное на базе Vite, предоставляет пользователям возможность зарегистрироваться, заполнив форму с необходимыми данными. В этой версии используется библиотека React Hook Form в сочетании с Yup для удобной работы с формами и валидацией.
 
-Currently, two official plugins are available:
+## Функционал
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Форма регистрации**: Приложение включает в себя форму с тремя полями:
+  - **Email**: Поле для ввода адреса электронной почты.
+  - **Пароль**: Поле для ввода пароля.
+  - **Повтор пароля**: Поле для повторного ввода пароля для подтверждения.
 
-## Expanding the ESLint configuration
+- **Кнопка «Зарегистрироваться»**: Пользователи могут отправить свои данные, нажав на кнопку «Зарегистрироваться».
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Валидация полей**: Реализована валидация для всех полей формы с использованием Yup. Если данные введены некорректно, пользователю будет выведена информация об ошибках валидации.
+
+- **Блокировка кнопки**: Кнопка «Зарегистрироваться» будет заблокирована, если хотя бы одно поле содержит невалидные данные, что предотвращает отправку некорректной информации.
+
+- **Автофокус**: После успешного заполнения всех полей формы фокус автоматически перемещается на кнопку «Зарегистрироваться», что улучшает пользовательский опыт.
+
+- **Вывод данных в консоль**: После нажатия на кнопку «Зарегистрироваться» данные формы выводятся в консоль, что позволяет разработчикам видеть введенные пользователем данные.
+
+- **Дизайн**: Интерфейс приложения разработан с акцентом на аккуратность и приятный внешний вид, что делает его удобным для пользователей.
+
+## Технологии
+- Vite
+- React
+- React Hook Form
+- Yup
+
+## Установка и запуск
+1. Клонируйте репозиторий:
+   ```bash
+   git clone <URL_репозитория>
+   ```
+2. Перейдите в директорию проекта:
+   ```bash
+   cd <имя_директории>
+   ```
+3. Установите зависимости:
+   ```bash
+   npm install
+   ```
+4. Запустите приложение:
+   ```bash
+   npm run dev
+   ```
