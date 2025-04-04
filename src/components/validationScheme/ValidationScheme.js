@@ -1,5 +1,6 @@
 import * as yup from 'yup'
 
+// Проерка на валидность введенных данных - выброс исключений
 export const ValidationScheme = () => {
   const validationSchema = yup.object().shape({
     email: yup
@@ -15,6 +16,7 @@ export const ValidationScheme = () => {
       .oneOf([yup.ref('password'), null], 'Пароли не совпадают')
       .required('Подтверждение пароля обязательно'),
   })
+
   return {
     validationSchema,
   }

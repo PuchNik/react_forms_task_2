@@ -4,23 +4,29 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { useState, useRef, useEffect } from 'react'
 import { ValidationScheme } from './components/validationScheme/ValidationScheme'
 
+// Деструктуризация схемы валидации
 const { validationSchema } = ValidationScheme()
 
+// Отправка ормы данных
 const sendFormData = (formData) => {
   console.log(formData)
 }
 
 function App() {
   const buttonRef = useRef(null)
+
+  // Состояние для отслеживания полей, которые были затронуты
   const [touchedFields, setTouchedFields] = useState({
     email: false,
     password: false,
     confirmPassword: false,
   })
 
+  // Отслеживание состояния отправки формы
   const isSubmitted = false
   const setIsSubmitted = () => !isSubmitted
 
+  // Управление состоянием формы и валидацией
   const {
     register,
     handleSubmit,
@@ -30,15 +36,16 @@ function App() {
     mode: 'onChange',
   })
 
+  // Обработка отправки формы
   const onSubmit = (data) => {
     setIsSubmitted()
     sendFormData(data)
   }
 
-  const handleBlur = (field) => {
-    setTouchedFields((prev) => ({ ...prev, [field]: true }))
-  }
+  // Обработка потери фокуса на полях
+  const handleBlur = (field) => { setTouchedFields((prev) => ({ ...prev, [field]: true })) }
 
+  // Перевод фокуса на кнопку отправки формы, если данные формы валидны
   useEffect(() => {
     if (isValid) {
       buttonRef.current.focus()
